@@ -174,7 +174,7 @@
         "YOLO mode (joked, not endorsed)"
       ],
       "category": "engineering",
-      "summary": "Potato-mode playbook that breaks a plan into small phases, implements small PRs, verifies (run app, fuzz/click), then auto-merges when checks pass. Used overnight day2→day3 for 100–170+ PRs.",
+      "summary": "Poteto-mode playbook that breaks a plan into small phases, implements small PRs, verifies (run app, fuzz/click), then auto-merges when checks pass. Used overnight day2→day3 for 100–170+ PRs.",
       "steps": [
         "Have a plan document",
         "slash poteto mode → full autopilot this plan",
