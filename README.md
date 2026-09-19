@@ -47,3 +47,7 @@ Short version: point your bot at the repo and paste the block above.
 | 3 | https://x.com/i/broadcasts/1YGNrbXEeazGw |
 
 ~25h audio → Whisper large‑v3. Metadata mined from those transcripts.
+
+## Contribute
+
+**PRs welcome** — transcript fixes, better bot/approach extractions, clearer Apply guidance. Keep it tight: no VODs, no ops scripts, no prompt-list scrapes.
