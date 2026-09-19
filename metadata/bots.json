@@ -216,7 +216,7 @@
         "Spud (name candidate)",
         "engineering bot"
       ],
-      "role": "Engineering bot — owns repo work, cloud agents / projects, potato-mode implementation",
+      "role": "Engineering bot — owns repo work, cloud agents / projects, poteto-mode implementation",
       "owner_human": "Lauren Tan (@poteto)",
       "day_introduced": "day1",
       "first_mention": {
@@ -226,7 +226,7 @@
         "quote_snippet": "Spud or Tater? What do you guys like?"
       },
       "skills": [
-        "P-Stack / potato mode",
+        "P-Stack / poteto mode",
         "Cursor Cloud Agents / Projects",
         "PR implementation"
       ],
@@ -333,17 +333,17 @@
         "Cupcake Engine",
         "founding engineer (Lauren's)"
       ],
-      "role": "Game/studio founding engineer — potato mode + cloud agents on Cupcake/Thursday Arena codebase",
+      "role": "Game/studio founding engineer — poteto mode + cloud agents on Cupcake/Thursday Arena codebase",
       "owner_human": "Lauren Tan (@poteto)",
       "day_introduced": "day2",
       "first_mention": {
         "day": "day2",
         "start_s": 5494,
         "end_s": 5530,
-        "quote_snippet": "tell Dr. Eggbot to create a engineering bot... This engineer will use PSAC and potato mode"
+        "quote_snippet": "tell Dr. Eggbot to create a engineering bot... This engineer will use PSAC and poteto mode"
       },
       "skills": [
-        "potato mode",
+        "poteto mode",
         "P-Stack",
         "orchestrate cloud agents",
         "supervise/check work"
@@ -365,7 +365,7 @@
           "day": "day2",
           "start_s": 5494,
           "end_s": 5530,
-          "quote_snippet": "engineering bot for me... use PSAC and potato mode to spawn cloud agents"
+          "quote_snippet": "engineering bot for me... use PSAC and poteto mode to spawn cloud agents"
         },
         {
           "day": "day2",
@@ -622,7 +622,7 @@
       "aliases": [
         "crumble triage agent"
       ],
-      "role": "Bug/issue triage — confirms bugs then hands to Tater for potato-mode fixes",
+      "role": "Bug/issue triage — confirms bugs then hands to Tater for poteto-mode fixes",
       "owner_human": "Lauren Tan (@poteto)",
       "day_introduced": "day3",
       "first_mention": {
@@ -633,7 +633,7 @@
       },
       "skills": [
         "triage confirmed bugs",
-        "hand off to eng with potato mode"
+        "hand off to eng with poteto mode"
       ],
       "routines": [
         "post-launch feedback factory"

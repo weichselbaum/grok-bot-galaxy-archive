@@ -52,14 +52,14 @@ Condensed narratives (optional): `dayN/summary.md`. Structured extracts: `../met
 |-------------------|---------|------------------|
 | 00:00–~00:35 | Pivot announcement | “Agents told us to pivot” → **game studio**; arena / bot battler ideas |
 | ~00:35–~01:30 | **Sales Engineering** | Amrita Venkatraman — Sherlock, Serena, Mimi |
-| Morning–afternoon | Build | Potato mode demos; **CupcakeEng**; ImageGen; swarm prototypes; Comment Sicko lore; food-named bots (Tater Mash, Hashbrown, Bake) |
+| Morning–afternoon | Build | Poteto mode demos; **CupcakeEng**; ImageGen; swarm prototypes; Comment Sicko lore; food-named bots (Tater Mash, Hashbrown, Bake) |
 | Mid | **Sales** | SpaceXAI Sales Team patterns |
 | Mid–late | **SDRs** | Simon Lackowski |
 | Late | **Customer Support** | David Gan — Stripe refund SOP demo (Carter vs Damon) |
 | Late build | Infra | Clerk, Vercel Functions exploration, Slack Ping bot, Notion SoT mandate, Audio Engineer spun up |
 
 ### Themes
-- Potato mode = router skill; Full autopilot playbook introduced  
+- Poteto mode = router skill; Full autopilot playbook introduced  
 - Swarm of multi-model cloud agents for prototypes  
 - Cupcake working title; art/audio experiments  
 - Auth (Clerk) + serverless direction  

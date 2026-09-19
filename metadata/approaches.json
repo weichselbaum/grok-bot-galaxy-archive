@@ -105,18 +105,18 @@
       "confidence": "high"
     },
     {
-      "id": "potato-mode-router",
-      "name": "Potato mode",
+      "id": "poteto-mode-router",
+      "name": "Poteto mode",
       "aliases": [
-        "/potato mode",
-        "P-Stack potato mode",
-        "potato mode prototyping"
+        "/poteto mode",
+        "P-Stack poteto mode",
+        "poteto mode prototyping"
       ],
       "category": "engineering",
-      "summary": "P-Stack router skill: invoke via /potato mode or natural language. Routes into playbooks (prototyping with debug sliders, architect multi-model review, full autopilot). Described as adding flavor/constraints awareness via multi-model swarm.",
+      "summary": "P-Stack router skill: invoke via /poteto mode or natural language. Routes into playbooks (prototyping with debug sliders, architect multi-model review, full autopilot). Described as adding flavor/constraints awareness via multi-model swarm.",
       "steps": [
         "Install P-Stack / ensure potato skills present",
-        "Invoke /potato mode or 'use potato mode'",
+        "Invoke /poteto mode or 'use poteto mode'",
         "Optionally specify playbook: prototyping | architect | full autopilot",
         "Let router spawn cloud agents as needed"
       ],
@@ -138,13 +138,13 @@
           "day": "day2",
           "start_s": 5314,
           "end_s": 5360,
-          "quote_snippet": "type slash potato mode"
+          "quote_snippet": "type slash poteto mode"
         },
         {
           "day": "day2",
           "start_s": 6819,
           "end_s": 6880,
-          "quote_snippet": "potato mode is... a router skill"
+          "quote_snippet": "poteto mode is... a router skill"
         }
       ],
       "transcript_refs": [
@@ -152,13 +152,13 @@
           "day": "day2",
           "start_s": 5314,
           "end_s": 5380,
-          "quote_snippet": "slash potato mode"
+          "quote_snippet": "slash poteto mode"
         },
         {
           "day": "day2",
           "start_s": 7092,
           "end_s": 7120,
-          "quote_snippet": "you're watching Lauren demonstrate how to use potato mode"
+          "quote_snippet": "you're watching Lauren demonstrate how to use poteto mode"
         }
       ],
       "secondary_refs": [
@@ -177,7 +177,7 @@
       "summary": "Potato-mode playbook that breaks a plan into small phases, implements small PRs, verifies (run app, fuzz/click), then auto-merges when checks pass. Used overnight day2→day3 for 100–170+ PRs.",
       "steps": [
         "Have a plan document",
-        "slash potato mode → full autopilot this plan",
+        "slash poteto mode → full autopilot this plan",
         "Agents implement small PRs",
         "Verifier agents run/fuzz app",
         "Auto-merge when green + trusted"
@@ -230,7 +230,7 @@
         "multi-model swarm"
       ],
       "category": "engineering",
-      "summary": "Spin many Cursor Cloud Agents / potato-mode agents (often different models) in parallel to generate and compare prototypes or critique architecture. Used day2 morning to explore game prototypes.",
+      "summary": "Spin many Cursor Cloud Agents / poteto-mode agents (often different models) in parallel to generate and compare prototypes or critique architecture. Used day2 morning to explore game prototypes.",
       "steps": [
         "Pick divergent models/tastes",
         "Swarm on same brief",
@@ -594,7 +594,7 @@
         "overnight software factory"
       ],
       "category": "verification",
-      "summary": "Closed loop: Slack user feedback → CoS triage workflow → Crumble confirms bugs → Tater fixes (potato mode) → Hashbrown validates → Play playtests green PRs → auto-approve → mash main. Also reacts to prod bugs via cloud agents.",
+      "summary": "Closed loop: Slack user feedback → CoS triage workflow → Crumble confirms bugs → Tater fixes (poteto mode) → Hashbrown validates → Play playtests green PRs → auto-approve → mash main. Also reacts to prod bugs via cloud agents.",
       "steps": [
         "Pipe feedback to Slack",
         "CoS factory: triage / reproduce / ticket",

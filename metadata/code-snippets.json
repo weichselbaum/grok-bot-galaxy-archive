@@ -204,9 +204,9 @@
       "confidence": "high"
     },
     {
-      "id": "slash-potato-mode",
+      "id": "slash-poteto-mode",
       "kind": "command",
-      "title": "slash potato mode (P-Stack router skill)",
+      "title": "slash poteto mode (P-Stack router skill)",
       "day": "day2",
       "timestamp": {
         "start_s": 5314,
@@ -218,8 +218,8 @@
       "pr_number": null,
       "url": null,
       "language": "bash",
-      "snippet": "/potato mode",
-      "summary": "In Grok Bot type /potato mode (or say 'use potato mode'). Router skill from P-Stack that selects playbooks (e.g. prototyping, architect, full autopilot). Also usable from Cursor Cloud Agents with P-Stack prompt.",
+      "snippet": "/poteto mode",
+      "summary": "In Grok Bot type /poteto mode (or say 'use poteto mode'). Router skill from P-Stack that selects playbooks (e.g. prototyping, architect, full autopilot). Also usable from Cursor Cloud Agents with P-Stack prompt.",
       "outcome": "unknown",
       "related_bots": [
         "dr-eggbot",
@@ -231,13 +231,13 @@
           "day": "day2",
           "start_s": 5314,
           "end_s": 5360,
-          "quote_snippet": "in Grokbot, you can type slash potato mode"
+          "quote_snippet": "in Grokbot, you can type slash poteto mode"
         },
         {
           "day": "day2",
           "start_s": 6819,
           "end_s": 6880,
-          "quote_snippet": "potato mode is... kind of like a router skill"
+          "quote_snippet": "poteto mode is... kind of like a router skill"
         }
       ],
       "confidence": "high"
@@ -245,7 +245,7 @@
     {
       "id": "full-autopilot-invocation",
       "kind": "command",
-      "title": "potato mode full autopilot this plan",
+      "title": "poteto mode full autopilot this plan",
       "day": "day3",
       "timestamp": {
         "start_s": 863,
@@ -258,7 +258,7 @@
       "url": null,
       "language": null,
       "snippet": null,
-      "summary": "slash potato mode + 'full autopilot this plan' decomposes plan into small phases, mini-factory of implement → verify/fuzz → auto-merge PRs. Overnight claimed >100 PRs; morning counts ~160–170 closed.",
+      "summary": "slash poteto mode + 'full autopilot this plan' decomposes plan into small phases, mini-factory of implement → verify/fuzz → auto-merge PRs. Overnight claimed >100 PRs; morning counts ~160–170 closed.",
       "outcome": "mashed",
       "related_bots": [
         "play-qa",
@@ -270,7 +270,7 @@
           "day": "day3",
           "start_s": 863,
           "end_s": 920,
-          "quote_snippet": "slash potato mode and you say full autopilot this plan"
+          "quote_snippet": "slash poteto mode and you say full autopilot this plan"
         },
         {
           "day": "day3",
@@ -485,7 +485,7 @@
       "url": null,
       "language": null,
       "snippet": null,
-      "summary": "Lauren's engineering skill pack on Grok Bot marketplace (search P-Stack). Claimed 2500 PRs shipped into production previous month (~83/day). Powers potato mode, Comment Sicko, etc.",
+      "summary": "Lauren's engineering skill pack on Grok Bot marketplace (search P-Stack). Claimed 2500 PRs shipped into production previous month (~83/day). Powers poteto mode, Comment Sicko, etc.",
       "outcome": "unknown",
       "related_bots": [
         "dr-eggbot",
