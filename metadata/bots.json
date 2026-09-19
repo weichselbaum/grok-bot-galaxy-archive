@@ -1,0 +1,1464 @@
+{
+  "$schema_doc": "Bots mined from Galaxy transcripts. fleet=studio (copy candidates) | workshop_demo (examples only).",
+  "version": 1,
+  "updated_at": "2026-09-19T20:06:00+02:00",
+  "source_priority": [
+    "transcripts/day{N}/transcript.json",
+    "media (screen / spoken URLs)",
+    "secondary/* (corroboration only)"
+  ],
+  "field_docs": {
+    "id": "slug",
+    "name": "display name",
+    "role": "function",
+    "fleet": "studio | workshop_demo",
+    "confidence": "high | medium | low",
+    "transcript_refs": "citations"
+  },
+  "bots": [
+    {
+      "id": "steve-chief-of-staff",
+      "name": "Steve",
+      "aliases": [
+        "Stephen",
+        "Steven",
+        "default bot (renamed)",
+        "chief of staff"
+      ],
+      "role": "Chief of Staff / executive assistant; primary human interface; delegates to specialist bots",
+      "owner_human": "Lauren Tan (@poteto)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 7194,
+        "end_s": 7210,
+        "quote_snippet": "I have a Steve bot that channels you know, Steve"
+      },
+      "skills": [
+        "delegation to team",
+        "dictation → plan",
+        "landing-page tasking",
+        "Slack feedback triage workflow (day3)"
+      ],
+      "routines": [
+        "triage Slack user feedback → reproduce → ticket (day3)",
+        "coordinate CupcakeEng / other eng bots"
+      ],
+      "connectors": [
+        "Slack",
+        "Notion",
+        "GitHub (via eng bots)",
+        "dictation"
+      ],
+      "architecture_notes": "Started as renamed default Grok Bot; Dr. Eggbot converted it into CoS/EA. Lauren talks mostly to Steve who delegates.",
+      "notable_incidents": "Opened ~2000-line pull request on day1; Lauren instituted 'no pull requests, we ship to main' rule in response.",
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 7236,
+          "end_s": 7250,
+          "quote_snippet": "Oh, no, Steve is just literally the default bot. I just renamed it."
+        },
+        {
+          "day": "day1",
+          "start_s": 7571,
+          "end_s": 7580,
+          "quote_snippet": "ask Dr. Eggbot to turn Steve into my chief of staff slash executive assistant"
+        },
+        {
+          "day": "day1",
+          "start_s": 10273,
+          "end_s": 10320,
+          "quote_snippet": "steve has made a mistake because he has opened a pull request... wow two thousand lines"
+        },
+        {
+          "day": "day3",
+          "start_s": 1581,
+          "end_s": 1610,
+          "quote_snippet": "steve is my chief of staff bot who is running the show"
+        },
+        {
+          "day": "day3",
+          "start_s": 7885,
+          "end_s": 7930,
+          "quote_snippet": "steve the link above is a is our slack channel that is receiving user feedback"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "dr-eggbot",
+      "name": "Dr. Eggbot",
+      "aliases": [
+        "Eggbot",
+        "Egg bot",
+        "the good doctor",
+        "Doctor"
+      ],
+      "role": "Meta-bot: creates and modifies other bots; installs P-Stack / engineering skill packs",
+      "owner_human": "Lauren Tan (@poteto)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 7156,
+        "end_s": 7180,
+        "quote_snippet": "Do you want to install Dr. Eggbot? ... Dr. Eggbot is a bot I created. It uses P stack"
+      },
+      "skills": [
+        "create high-quality bots",
+        "P-Stack / potato principles",
+        "rewrite bot descriptions",
+        "team-wide policy propagation (Slack norms)"
+      ],
+      "routines": [
+        "spawn specialist bots on request",
+        "food/potato-themed naming for studio bots"
+      ],
+      "connectors": [
+        "Grok Bot marketplace (published)",
+        "P-Stack plugins"
+      ],
+      "architecture_notes": "Marketplace-installable template; can inspect and rewrite other bots on the team. Used to create CupcakeEng, convert Steve to CoS, invent mash language via Notion task.",
+      "notable_incidents": "Instructed to use potato-themed names → Notion task caused merges to be called 'mash' (day3 wrap).",
+      "marketplace": true,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 7165,
+          "end_s": 7200,
+          "quote_snippet": "Dr. Eggbot is a bot I created. It uses P stack... taught Eggbot how to create high quality bots"
+        },
+        {
+          "day": "day2",
+          "start_s": 967,
+          "end_s": 990,
+          "quote_snippet": "one of my favorite bots... Dr. Eggbot"
+        },
+        {
+          "day": "day2",
+          "start_s": 11641,
+          "end_s": 11700,
+          "quote_snippet": "created CupcakeEng with DrEggBot"
+        },
+        {
+          "day": "day3",
+          "start_s": 8755,
+          "end_s": 8780,
+          "quote_snippet": "I just told Dr. Eggbot... responsible for creating bots for me"
+        },
+        {
+          "day": "day3",
+          "start_s": 28454,
+          "end_s": 28500,
+          "quote_snippet": "I told Dr. Eggbot... potato-themed names... every merge... should be called a mash"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "grokpot-prototyper",
+      "name": "Grokpot",
+      "aliases": [
+        "Grok pot",
+        "prototyper bot",
+        "prototype robot"
+      ],
+      "role": "Prototype engineer — ships loose HTML/landing prototypes quickly",
+      "owner_human": "Lauren Tan (@poteto)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 7608,
+        "end_s": 7630,
+        "quote_snippet": "yes, make a prototyper bot"
+      },
+      "skills": [
+        "HTML landing prototypes",
+        "status updates on long tasks"
+      ],
+      "routines": [],
+      "connectors": [],
+      "architecture_notes": "Named via chat vote (potato/nacho/waffle/dumpling/churro/meatball → Grokpot). Chat-created specialist.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 7608,
+          "end_s": 7630,
+          "quote_snippet": "yes, make a prototyper bot"
+        },
+        {
+          "day": "day1",
+          "start_s": 8386,
+          "end_s": 8420,
+          "quote_snippet": "votes for potato... grok pot mashed potatoes... that's a grok pot"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "tater-engineer",
+      "name": "Tater",
+      "aliases": [
+        "Tater Mash",
+        "Spud (name candidate)",
+        "engineering bot"
+      ],
+      "role": "Engineering bot — owns repo work, cloud agents / projects, potato-mode implementation",
+      "owner_human": "Lauren Tan (@poteto)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 8730,
+        "end_s": 8750,
+        "quote_snippet": "Spud or Tater? What do you guys like?"
+      },
+      "skills": [
+        "P-Stack / potato mode",
+        "Cursor Cloud Agents / Projects",
+        "PR implementation"
+      ],
+      "routines": [
+        "fix issues from Crumble triage (day3)",
+        "coordinate with Hashbrown for validation"
+      ],
+      "connectors": [
+        "GitHub",
+        "Cursor Cloud Agents",
+        "Notion"
+      ],
+      "architecture_notes": "Food-themed eng bot; works with Hashbrown (reviewer) and Crumble (triage). Day1 Steve PR window mentions Tater spinning Cursor Projects.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 8730,
+          "end_s": 8755,
+          "quote_snippet": "Spud or Tater?"
+        },
+        {
+          "day": "day1",
+          "start_s": 10085,
+          "end_s": 10120,
+          "quote_snippet": "tater is just cloud agents now... created a new project"
+        },
+        {
+          "day": "day1",
+          "start_s": 10330,
+          "end_s": 10350,
+          "quote_snippet": "we have tater who is our engineering bot"
+        },
+        {
+          "day": "day2",
+          "start_s": 13110,
+          "end_s": 13130,
+          "quote_snippet": "food names like Tater Mash and Hashbrown"
+        },
+        {
+          "day": "day3",
+          "start_s": 8859,
+          "end_s": 8880,
+          "quote_snippet": "crumble triage agent should work with tater to start fixing those issues"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "hashbrown-pr-reviewer",
+      "name": "Hashbrown",
+      "aliases": [
+        "Hash brown"
+      ],
+      "role": "PR / work reviewer — validates triage and reviews PRs Tater opens",
+      "owner_human": "Lauren Tan (@poteto)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 13835,
+        "end_s": 13860,
+        "quote_snippet": "new bot called Hashbrown, and Hashbrown's job is to review the PRs that Tater opens"
+      },
+      "skills": [
+        "PR review",
+        "triage validation"
+      ],
+      "routines": [
+        "review Tater PRs",
+        "validate Crumble triage (day3)"
+      ],
+      "connectors": [
+        "GitHub"
+      ],
+      "architecture_notes": "Pair with Tater: implement vs review separation.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 13835,
+          "end_s": 13860,
+          "quote_snippet": "Hashbrown's job is to review the PRs that Tater opens"
+        },
+        {
+          "day": "day3",
+          "start_s": 8964,
+          "end_s": 8990,
+          "quote_snippet": "work with hash brown to... validate that the triage was done correctly"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "cupcake-eng",
+      "name": "CupcakeEng",
+      "aliases": [
+        "Cupcake Eng",
+        "Cupcake Engine",
+        "founding engineer (Lauren's)"
+      ],
+      "role": "Game/studio founding engineer — potato mode + cloud agents on Cupcake/Thursday Arena codebase",
+      "owner_human": "Lauren Tan (@poteto)",
+      "day_introduced": "day2",
+      "first_mention": {
+        "day": "day2",
+        "start_s": 5494,
+        "end_s": 5530,
+        "quote_snippet": "tell Dr. Eggbot to create a engineering bot... This engineer will use PSAC and potato mode"
+      },
+      "skills": [
+        "potato mode",
+        "P-Stack",
+        "orchestrate cloud agents",
+        "supervise/check work"
+      ],
+      "routines": [
+        "talk to ImageGen about repo/game design language",
+        "listen to incoming PRs"
+      ],
+      "connectors": [
+        "GitHub",
+        "Cursor Cloud Agents",
+        "Notion"
+      ],
+      "architecture_notes": "Created by Dr. Eggbot; description rewritten around potato principles. Card rarity joke: epic/legendary in Thursday Arena.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 5494,
+          "end_s": 5530,
+          "quote_snippet": "engineering bot for me... use PSAC and potato mode to spawn cloud agents"
+        },
+        {
+          "day": "day2",
+          "start_s": 11641,
+          "end_s": 11720,
+          "quote_snippet": "have CupcakeEng talk to the ImageGen bot... created CupcakeEng with DrEggBot"
+        },
+        {
+          "day": "day3",
+          "start_s": 7056,
+          "end_s": 7080,
+          "quote_snippet": "my founding engineer here is just still listening to all the prs"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "bake-engineer",
+      "name": "Bake",
+      "aliases": [
+        "founding engineer (Matt's)",
+        "engineer bot"
+      ],
+      "role": "Engineering bot on Matt's team — merges backend work, high PR velocity",
+      "owner_human": "Matt Palmer (@mattyp)",
+      "day_introduced": "day2",
+      "first_mention": {
+        "day": "day2",
+        "start_s": 25035,
+        "end_s": 25060,
+        "quote_snippet": "bake my engineer is getting all i need to remind it to actually check off the the notion"
+      },
+      "skills": [
+        "backend merges",
+        "Notion task hygiene"
+      ],
+      "routines": [
+        "merge backend PRs",
+        "check off Notion tasks"
+      ],
+      "connectors": [
+        "GitHub",
+        "Notion",
+        "Slack"
+      ],
+      "architecture_notes": "By day3 wrap: '235 plus PRs already'. Part of software factory narrative.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 25035,
+          "end_s": 25060,
+          "quote_snippet": "bake my engineer is getting all"
+        },
+        {
+          "day": "day3",
+          "start_s": 20817,
+          "end_s": 20850,
+          "quote_snippet": "this bot bake who's our engineer and we're at 235 plus prs already"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "play-qa",
+      "name": "Play",
+      "aliases": [
+        "play tester",
+        "QA bot",
+        "playtester bot"
+      ],
+      "role": "QA / playtest — on green CI PRs, drives game UI end-to-end before mash/merge",
+      "owner_human": "Lauren Tan (@poteto) / studio",
+      "day_introduced": "day3",
+      "first_mention": {
+        "day": "day3",
+        "start_s": 953,
+        "end_s": 980,
+        "quote_snippet": "It's called play whose job is to basically be a play testers"
+      },
+      "skills": [
+        "end-to-end UI playtest",
+        "game-engine-aware QA",
+        "PR approval after bugfix"
+      ],
+      "routines": [
+        "subscription/event: when PR CI green → playtest → feedback before merge"
+      ],
+      "connectors": [
+        "GitHub",
+        "Vercel preview links",
+        "CI"
+      ],
+      "architecture_notes": "Uses recurring task/event subscription. Accesses Vercel preview deploys. Core of overnight software factory with auto bugfix + auto-approve.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day3",
+          "start_s": 953,
+          "end_s": 1020,
+          "quote_snippet": "looks at each PR... green on our CI suite, we'll just jump in and play test it"
+        },
+        {
+          "day": "day3",
+          "start_s": 7503,
+          "end_s": 7560,
+          "quote_snippet": "play tester bot who will pick up that change... approve the pr"
+        },
+        {
+          "day": "day3",
+          "start_s": 28416,
+          "end_s": 28440,
+          "quote_snippet": "play testing, fixing PRs, auto approving PRs... landing to mash main"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "comment-sicko",
+      "name": "Comment Sicko",
+      "aliases": [
+        "comment sicko"
+      ],
+      "role": "P-Stack agent that deletes / kills code comments",
+      "owner_human": "Lauren Tan (@poteto)",
+      "day_introduced": "day2",
+      "first_mention": {
+        "day": "day2",
+        "start_s": 13191,
+        "end_s": 13240,
+        "quote_snippet": "Comment sicko is an agent in Pstack whose job is to kill comments"
+      },
+      "skills": [
+        "delete comments",
+        "maintainability hygiene"
+      ],
+      "routines": [],
+      "connectors": [],
+      "architecture_notes": "Inspired by colleague Paul's 'sicko mode' skill / meme. Part of P-Stack marketplace pack, not a separate studio employee card necessarily.",
+      "notable_incidents": null,
+      "marketplace": true,
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 13191,
+          "end_s": 13280,
+          "quote_snippet": "Comment sicko is an agent in Pstack whose job is to kill comments... inspired by sicko mode"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "audio-engineer",
+      "name": "Audio Engineer",
+      "aliases": [
+        "audio engineering bot"
+      ],
+      "role": "Audio design / sound prototypes for the game (Suno tracks mentioned)",
+      "owner_human": "studio (Lauren/Matt/Roshan)",
+      "day_introduced": "day2",
+      "first_mention": {
+        "day": "day2",
+        "start_s": 26895,
+        "end_s": 26930,
+        "quote_snippet": "spin up a bot whose job it is to be our audio engineer and go figure out some prototypes"
+      },
+      "skills": [
+        "audio prototypes",
+        "Suno track generation (collaborative)"
+      ],
+      "routines": [],
+      "connectors": [
+        "Suno (mentioned as generation path)"
+      ],
+      "architecture_notes": "Spun up late day2; revisited day3 — music deprioritized for launch but tracks generated.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 26895,
+          "end_s": 26930,
+          "quote_snippet": "audio engineer and go figure out some prototypes for that"
+        },
+        {
+          "day": "day3",
+          "start_s": 1515,
+          "end_s": 1550,
+          "quote_snippet": "bot whose job it was to help us with audio engineering"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "imagegen-bot",
+      "name": "ImageGen",
+      "aliases": [
+        "ImageGen bot",
+        "Imagine"
+      ],
+      "role": "Image / asset generation for game art and design language",
+      "owner_human": "Lauren Tan (@poteto)",
+      "day_introduced": "day2",
+      "first_mention": {
+        "day": "day2",
+        "start_s": 11641,
+        "end_s": 11680,
+        "quote_snippet": "have CupcakeEng talk to the ImageGen bot and explain the repo"
+      },
+      "skills": [
+        "image generation",
+        "design language assets"
+      ],
+      "routines": [
+        "coordinate with CupcakeEng on art direction"
+      ],
+      "connectors": [],
+      "architecture_notes": "Chained with CupcakeEng via chief-of-staff instruction.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 11641,
+          "end_s": 11680,
+          "quote_snippet": "CupcakeEng talk to the ImageGen bot"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "crumble-triage",
+      "name": "Crumble",
+      "aliases": [
+        "crumble triage agent"
+      ],
+      "role": "Bug/issue triage — confirms bugs then hands to Tater for potato-mode fixes",
+      "owner_human": "Lauren Tan (@poteto)",
+      "day_introduced": "day3",
+      "first_mention": {
+        "day": "day3",
+        "start_s": 8859,
+        "end_s": 8880,
+        "quote_snippet": "new crumble triage agent should work with tater to start fixing those issues"
+      },
+      "skills": [
+        "triage confirmed bugs",
+        "hand off to eng with potato mode"
+      ],
+      "routines": [
+        "post-launch feedback factory"
+      ],
+      "connectors": [
+        "Slack feedback",
+        "GitHub issues/PRs"
+      ],
+      "architecture_notes": "Part of day3 user-feedback → triage → fix factory; Hashbrown validates triage.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day3",
+          "start_s": 8859,
+          "end_s": 8880,
+          "quote_snippet": "crumble triage agent should work with tater"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "knowledge-base-manager",
+      "name": "Knowledge Base Manager",
+      "aliases": [
+        "knowledge base manager"
+      ],
+      "role": "Watches bot conversations; updates Notion as company knowledge base when messaged",
+      "owner_human": "Lauren Tan (@poteto)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 19066,
+        "end_s": 19120,
+        "quote_snippet": "created knowledge base manager then the the job of this spot is to watch all the other conversations"
+      },
+      "skills": [
+        "Notion sync",
+        "passive listen / on-call updates"
+      ],
+      "routines": [
+        "keep Notion up to date when messaged"
+      ],
+      "connectors": [
+        "Notion"
+      ],
+      "architecture_notes": "Created via Dr. Eggbot mid day1 ops work.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 19066,
+          "end_s": 19120,
+          "quote_snippet": "knowledge base manager... watch all the other conversations... keep notion up to date"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "growth-engineer",
+      "name": "Growth Engineer",
+      "aliases": [
+        "growth engineer bot"
+      ],
+      "role": "Growth / GTM engineering tasks (landing, acquisition experiments)",
+      "owner_human": "Matt Palmer (@mattyp) (hypothesized ownership; spoken as 'our growth engineer')",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 24730,
+        "end_s": 24750,
+        "quote_snippet": "I have a growth engineer. I have a founding engineer."
+      },
+      "skills": [],
+      "routines": [],
+      "connectors": [],
+      "architecture_notes": "Mentioned as part of Matt's bot lineup and day2 preview deploy workstream.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 24730,
+          "end_s": 24750,
+          "quote_snippet": "growth engineer. I have a founding engineer."
+        },
+        {
+          "day": "day2",
+          "start_s": 5830,
+          "end_s": 5860,
+          "quote_snippet": "we also have our growth engineer, who's working on this"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "medium",
+      "fleet": "studio"
+    },
+    {
+      "id": "ping-slack-monitor",
+      "name": "Ping",
+      "aliases": [
+        "Slack manager bot"
+      ],
+      "role": "Monitors Slack mentions/DMs and routes into bot ecosystem",
+      "owner_human": "studio (spoken day2)",
+      "day_introduced": "day2",
+      "first_mention": {
+        "day": "day2",
+        "start_s": 26040,
+        "end_s": 26080,
+        "quote_snippet": "I have a bot here called ping that is monitoring slack"
+      },
+      "skills": [
+        "Slack watch routines"
+      ],
+      "routines": [
+        "when mentioned in Slack / DMs"
+      ],
+      "connectors": [
+        "Slack"
+      ],
+      "architecture_notes": "Routine-based Slack listener so humans can @ bots via Slack as control plane.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 26040,
+          "end_s": 26080,
+          "quote_snippet": "bot here called ping that is monitoring slack"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high",
+      "fleet": "studio"
+    },
+    {
+      "id": "data-dan",
+      "name": "Data Dan",
+      "aliases": [
+        "data Dan"
+      ],
+      "role": "101 demo: builds Google Forms / collects audience data",
+      "owner_human": "Roman Ugarte (Grok Bot 101)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 2367,
+        "end_s": 2390,
+        "quote_snippet": "We have Data Dan, Slide Sonja, and Email Ethan"
+      },
+      "skills": [
+        "Google Forms creation",
+        "live computer use"
+      ],
+      "routines": [],
+      "connectors": [
+        "Google Forms"
+      ],
+      "architecture_notes": "Demo trio for 101 — create from scratch, show computer + memory + multi-bot workflow.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 2367,
+          "end_s": 2431,
+          "quote_snippet": "Data Dan... create him there"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "slide-sonia",
+      "name": "Slide Sonia",
+      "aliases": [
+        "Slide Sonja",
+        "slide Sonia"
+      ],
+      "role": "101 demo: slide editing; teach-a-task → skill from screen recording",
+      "owner_human": "Roman Ugarte (Grok Bot 101)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 2367,
+        "end_s": 2390,
+        "quote_snippet": "Data Dan, Slide Sonja, and Email Ethan"
+      },
+      "skills": [
+        "teach a task → animation skill",
+        "Google Slides"
+      ],
+      "routines": [
+        "multi-bot routine with Email Ethan for summaries"
+      ],
+      "connectors": [
+        "Google Slides"
+      ],
+      "architecture_notes": "Canonical teach-a-task demo: human drives animation once → becomes reusable skill.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 2643,
+          "end_s": 2720,
+          "quote_snippet": "teach a task... show Slide Sonia... turn that recording... into a skill"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "email-ethan",
+      "name": "Email Ethan",
+      "aliases": [
+        "e-mail Ethan",
+        "email Ethan"
+      ],
+      "role": "101 demo: email consolidation / outbound of analysis",
+      "owner_human": "Roman Ugarte (Grok Bot 101)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 2367,
+        "end_s": 2390,
+        "quote_snippet": "Data Dan, Slide Sonja, and Email Ethan"
+      },
+      "skills": [
+        "email drafting/sending with auto-review gates"
+      ],
+      "routines": [
+        "work with Slide Sonia on change summaries"
+      ],
+      "connectors": [
+        "email"
+      ],
+      "architecture_notes": "Used to show auto-review blocking outbound email without permission.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 2790,
+          "end_s": 2820,
+          "quote_snippet": "email Ethan kind of consolidate all of that analysis"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "cora-pm-chief",
+      "name": "Cora",
+      "aliases": [],
+      "role": "PM demo chief of staff",
+      "owner_human": "Kevin Niparko (PM session)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 22237,
+        "end_s": 22250,
+        "quote_snippet": "Cora, who's our chief of staff up here"
+      },
+      "skills": [
+        "orchestration of PM squad"
+      ],
+      "routines": [],
+      "connectors": [
+        "Slack"
+      ],
+      "architecture_notes": "PM workshop squad lead alongside Pete, Ashley, Emily, Pixel, Ray.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 22237,
+          "end_s": 22250,
+          "quote_snippet": "Cora, who's our chief of staff"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "pm-pete",
+      "name": "PM Pete",
+      "aliases": [
+        "Pete"
+      ],
+      "role": "Product assistant — PRDs, insights synthesis, lower-level PM work",
+      "owner_human": "Kevin Niparko (PM session)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 21933,
+        "end_s": 21960,
+        "quote_snippet": "PM Pete is a trusted sidekick for the product team"
+      },
+      "skills": [
+        "PRD generation skill",
+        "customer insight synthesis"
+      ],
+      "routines": [
+        "receives data insights from Ashley"
+      ],
+      "connectors": [],
+      "architecture_notes": "Has learned best-PRD patterns as a skill.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 21933,
+          "end_s": 21960,
+          "quote_snippet": "draft up some product requirement docs"
+        },
+        {
+          "day": "day1",
+          "start_s": 22411,
+          "end_s": 22440,
+          "quote_snippet": "skill that PM Pete is using to generate this PRD"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "ashley-data-scientist",
+      "name": "Ashley",
+      "aliases": [],
+      "role": "Data scientist — queries warehouse, charts, synthesis for PM decisions",
+      "owner_human": "Kevin Niparko (PM session)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 21900,
+        "end_s": 21920,
+        "quote_snippet": "Ashley, the go-to for de-constructing"
+      },
+      "skills": [
+        "SQL/query generation against data warehouse"
+      ],
+      "routines": [
+        "messages Pete with investigation insights"
+      ],
+      "connectors": [
+        "data warehouse"
+      ],
+      "architecture_notes": "Connected to data layer; bot-to-bot chat with Pete.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 22241,
+          "end_s": 22280,
+          "quote_snippet": "Ashley, who's our data scientist... connected to our data layer"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "emily-eng-manager",
+      "name": "Emily",
+      "aliases": [],
+      "role": "Engineering manager bot — does NOT code; manages five eng colleague bots, verification loops",
+      "owner_human": "Kevin Niparko (PM session)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 21854,
+        "end_s": 21900,
+        "quote_snippet": "Emily is an engineering manager. Emily has been coached not to actually do the coding"
+      },
+      "skills": [
+        "decompose work",
+        "delegate to eng bots",
+        "verification loops"
+      ],
+      "routines": [],
+      "connectors": [],
+      "architecture_notes": "Single contact across eng team of five Grok Bot engineers.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 21854,
+          "end_s": 21910,
+          "quote_snippet": "five different engineering colleagues in Grokbot that she manages"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "pixel-designer",
+      "name": "Pixel",
+      "aliases": [],
+      "role": "Designer bot — S-tier AI design guidance loaded as context",
+      "owner_human": "Kevin Niparko (PM session); also name collision with studio design talk",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 21953,
+        "end_s": 21990,
+        "quote_snippet": "Pixel is a designer and so has been trained on some of the best advice"
+      },
+      "skills": [
+        "AI design best practices"
+      ],
+      "routines": [],
+      "connectors": [],
+      "architecture_notes": "PM workshop designer. Day1 studio also discussed design system with a Pixel mention in ops context — treat workshop Pixel as primary high-confidence entry.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 21953,
+          "end_s": 21990,
+          "quote_snippet": "Pixel is one of my favorites. Pixel is a designer"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "ray-recruiter",
+      "name": "Ray",
+      "aliases": [],
+      "role": "Recruiter — sourcing and hiring pipeline for product org",
+      "owner_human": "Kevin Niparko (PM session)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 21978,
+        "end_s": 22020,
+        "quote_snippet": "Ray, who is a recruiter"
+      },
+      "skills": [
+        "sourcing",
+        "hiring pipeline"
+      ],
+      "routines": [],
+      "connectors": [],
+      "architecture_notes": "PM workshop people/recruiting colleague.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 21978,
+          "end_s": 22020,
+          "quote_snippet": "Ray, who is a recruiter"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "closebot",
+      "name": "CloseBot",
+      "aliases": [
+        "close bot",
+        "Close Bot"
+      ],
+      "role": "Founders demo: handles customers / sales conversations end-to-end",
+      "owner_human": "Guest founder Jenny (Founders session with Shub Gaur)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 27143,
+        "end_s": 27160,
+        "quote_snippet": "The first is the close bot. That is the one that handles my customers"
+      },
+      "skills": [
+        "customer handling",
+        "pass feedback to ProdBot"
+      ],
+      "routines": [],
+      "connectors": [],
+      "architecture_notes": "Part of four-bot founder squad: Close, Prod, Stock, Yap (+ Proto mentioned).",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 27143,
+          "end_s": 27160,
+          "quote_snippet": "close bot... handles my customers"
+        },
+        {
+          "day": "day1",
+          "start_s": 28412,
+          "end_s": 28440,
+          "quote_snippet": "when CloseBot gets some feedback, it can pass it to ProdBot"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "prodbot",
+      "name": "ProdBot",
+      "aliases": [
+        "prod bot",
+        "Prod Bot"
+      ],
+      "role": "Founders demo: tracks what's shipped / live across eng velocity",
+      "owner_human": "Guest founder Jenny (Founders session)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 27146,
+        "end_s": 27160,
+        "quote_snippet": "prod bot, which is what figures out what's been shipped"
+      },
+      "skills": [
+        "shipped-feature rundown",
+        "Cloud Agent kickoff"
+      ],
+      "routines": [
+        "daily rundown"
+      ],
+      "connectors": [
+        "Cloud Agents"
+      ],
+      "architecture_notes": "Receives learnings from CloseBot; can kick off Cloud Agents.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 27708,
+          "end_s": 27740,
+          "quote_snippet": "prod bot is basically a bot that does a lot of this work... what's been shipped"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "stockbot",
+      "name": "StockBot",
+      "aliases": [
+        "stock bot",
+        "Stockbot"
+      ],
+      "role": "Founders demo: competitive intel — signs up for competitor products autonomously",
+      "owner_human": "Guest founder Jenny (Founders session)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 27152,
+        "end_s": 27170,
+        "quote_snippet": "stock bot. That is the competition stocker"
+      },
+      "skills": [
+        "competitor signup + product walkthrough",
+        "competitive rundown"
+      ],
+      "routines": [],
+      "connectors": [
+        "browser / own computer"
+      ],
+      "architecture_notes": "QR shared for audience to steal template. Uses own computer to try competitors.",
+      "notable_incidents": null,
+      "marketplace": true,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 27866,
+          "end_s": 27920,
+          "quote_snippet": "Stockbot... will go find your competitors. It will sign up for autonomously"
+        },
+        {
+          "day": "day1",
+          "start_s": 28783,
+          "end_s": 28800,
+          "quote_snippet": "QR code for StockBot if you guys want to steal it"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "yapbot",
+      "name": "YapBot",
+      "aliases": [
+        "Yap bot"
+      ],
+      "role": "Founders demo: talks/writes like the founder across surfaces; other bots pull it in",
+      "owner_human": "Guest founder Jenny (Founders session)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 28260,
+        "end_s": 28290,
+        "quote_snippet": "my Yap bot. So this bot has one purpose and one purpose only"
+      },
+      "skills": [
+        "founder voice/style"
+      ],
+      "routines": [
+        "proactively invited by other bots"
+      ],
+      "connectors": [],
+      "architecture_notes": "Voice clone for comms; squad asks YapBot to speak as Jenny.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 28260,
+          "end_s": 28320,
+          "quote_snippet": "Yap bot... talk like me across all of the different surfaces"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "sherlock-sales-eng",
+      "name": "Sherlock",
+      "aliases": [],
+      "role": "Sales Eng demo: technical expert over Grok Bot repo Q&A without leaking IP",
+      "owner_human": "Amrita Venkatraman (Sales Engineering)",
+      "day_introduced": "day2",
+      "first_mention": {
+        "day": "day2",
+        "start_s": 2328,
+        "end_s": 2360,
+        "quote_snippet": "I call him Sherlock... access to the Grokbot repository"
+      },
+      "skills": [
+        "repo Q&A",
+        "IP-safe phrasing",
+        "executive-friendly answers"
+      ],
+      "routines": [],
+      "connectors": [
+        "Grok Bot / Cursor repository access"
+      ],
+      "architecture_notes": "Steered never to release IP; workshop-only (not studio employee).",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 2328,
+          "end_s": 2380,
+          "quote_snippet": "Sherlock... steered... doesn't ever release any IP"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "serena-competitive-intel",
+      "name": "Serena",
+      "aliases": [
+        "Serena Williams"
+      ],
+      "role": "Sales Eng demo: competitive intel — uses competitor products on own computer",
+      "owner_human": "Amrita Venkatraman (Sales Engineering)",
+      "day_introduced": "day2",
+      "first_mention": {
+        "day": "day2",
+        "start_s": 2373,
+        "end_s": 2420,
+        "quote_snippet": "I named it Serena Williams... studying her competitors"
+      },
+      "skills": [
+        "competitor product walkthrough",
+        "diff vs own product",
+        "suggestions"
+      ],
+      "routines": [],
+      "connectors": [
+        "browser / own computer"
+      ],
+      "architecture_notes": "Named for tennis rival-study habit. Live demo booking competitor flows (e.g. Southwest).",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 2373,
+          "end_s": 2420,
+          "quote_snippet": "Serena... uses competitor products in her own computer"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "mimi-proof-points",
+      "name": "Mimi",
+      "aliases": [],
+      "role": "Sales Eng demo: slide / customer proof-point researcher from blog posts",
+      "owner_human": "Amrita Venkatraman (Sales Engineering)",
+      "day_introduced": "day2",
+      "first_mention": {
+        "day": "day2",
+        "start_s": 2470,
+        "end_s": 2520,
+        "quote_snippet": "Mimi. She's going to be kind of the slide customer proof point researcher"
+      },
+      "skills": [
+        "blog → slide deck",
+        "brand logo fetch",
+        "screenshots"
+      ],
+      "routines": [],
+      "connectors": [
+        "slides",
+        "browser",
+        "own Cursor inside computer"
+      ],
+      "architecture_notes": "Builds proof slides (Jellyfish, Salesforce, Grab examples).",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 2470,
+          "end_s": 2580,
+          "quote_snippet": "Mimi... create these slides for me and then take screenshots"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high",
+      "fleet": "workshop_demo"
+    },
+    {
+      "id": "master-chief-guest-cos",
+      "name": "Master Chief",
+      "aliases": [
+        "master chief"
+      ],
+      "role": "Guest anecdote: chief of staff overseeing media/agency/businesses (~22 bots claimed in secondary; transcript confirms CoS name + multi-business oversight)",
+      "owner_human": "Guest Jenny (media/agency founder in Founders-adjacent chat)",
+      "day_introduced": "day1",
+      "first_mention": {
+        "day": "day1",
+        "start_s": 30140,
+        "end_s": 30180,
+        "quote_snippet": "we actually call him master chief my husband named that"
+      },
+      "skills": [
+        "oversee multiple businesses"
+      ],
+      "routines": [],
+      "connectors": [],
+      "architecture_notes": "Guest anecdote only — not a studio bot. Secondary claims '22 bots'; treat multi-count as hypothesized unless more transcript support.",
+      "notable_incidents": null,
+      "marketplace": false,
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 30140,
+          "end_s": 30180,
+          "quote_snippet": "master chief basically is the chief of staff that oversees"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/hypothesized-bot-roster.md"
+      ],
+      "confidence": "medium",
+      "fleet": "workshop_demo"
+    }
+  ]
+}

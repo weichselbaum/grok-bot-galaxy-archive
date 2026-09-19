@@ -1,0 +1,8 @@
+media/
+logs/
+tmp/
+.venv*/
+__pycache__/
+*.pyc
+.DS_Store
+yt-dlp

@@ -1,0 +1,574 @@
+{
+  "$schema_doc": "Stack/repos/launch notes mined from Galaxy transcripts.",
+  "version": 1,
+  "updated_at": "2026-09-19T20:06:00+02:00",
+  "source_priority": [
+    "transcripts/day{N}/transcript.json",
+    "stream screen OCR (future)",
+    "public GitHub after org/repo names confirmed in transcript"
+  ],
+  "field_docs": {
+    "id": "slug",
+    "kind": "repo|stack|command|url|incident|other",
+    "detail": "what",
+    "confidence": "high|medium|low"
+  },
+  "snippets": [
+    {
+      "id": "github-org-ship-by-thursday",
+      "kind": "repo",
+      "title": "GitHub org Ship by Thursday (blank slate day1)",
+      "day": "day1",
+      "timestamp": {
+        "start_s": 1357,
+        "end_s": 1380
+      },
+      "speaker": "Matt Palmer",
+      "repo": "shipbythursday/*",
+      "path": null,
+      "pr_number": null,
+      "url": "https://github.com/shipbythursday",
+      "language": null,
+      "snippet": null,
+      "summary": "Completely blank GitHub org created before stream as company starting point. Spoken URL: github.com/shipbythursday.",
+      "outcome": "unknown",
+      "related_bots": [
+        "steve-chief-of-staff",
+        "tater-engineer"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 1357,
+          "end_s": 1380,
+          "quote_snippet": "GitHub org... called Ship by Thursday"
+        },
+        {
+          "day": "day1",
+          "start_s": 1363,
+          "end_s": 1370,
+          "quote_snippet": "github.com slash shipbythursday... completely empty"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "domain-shipbythurs-day",
+      "kind": "url",
+      "title": "Company domain shipbythurs.day + shipbythursday.com check",
+      "day": "day1",
+      "timestamp": {
+        "start_s": 10083,
+        "end_s": 10120
+      },
+      "speaker": "Matt Palmer / Lauren Tan",
+      "repo": null,
+      "path": null,
+      "pr_number": null,
+      "url": "https://shipbythurs.day",
+      "language": null,
+      "snippet": null,
+      "summary": "Team acquired shipbythurs.day for company lander; also checked shipbythursday.com availability. Later DNS wired via Vercel.",
+      "outcome": "unknown",
+      "related_bots": [
+        "steve-chief-of-staff"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 10083,
+          "end_s": 10100,
+          "quote_snippet": "we now own the domain ship by thurs.day"
+        },
+        {
+          "day": "day1",
+          "start_s": 18292,
+          "end_s": 18320,
+          "quote_snippet": "DNS thing with... our shipbythurs.day"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "steve-pr-unauthorized-2000",
+      "kind": "pr",
+      "title": "Steve opens ~2000-line PR (triggers ship-to-main rule)",
+      "day": "day1",
+      "timestamp": {
+        "start_s": 10273,
+        "end_s": 10320
+      },
+      "speaker": "Lauren Tan",
+      "repo": "shipbythursday/* (popup lander hypothesized)",
+      "path": null,
+      "pr_number": null,
+      "url": null,
+      "language": null,
+      "snippet": null,
+      "summary": "Steve (CoS) opened a pull request Lauren called a mistake; ~2000 lines unread on stream. Immediate new rule: no PRs — ship to main until someone yells. Motivates later reviewer bot Hashbrown + mash workflow.",
+      "outcome": "unknown",
+      "related_bots": [
+        "steve-chief-of-staff",
+        "tater-engineer",
+        "hashbrown-pr-reviewer"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 10273,
+          "end_s": 10300,
+          "quote_snippet": "steve has made a mistake because he has opened a pull request... new rule no pull requests we ship to maine"
+        },
+        {
+          "day": "day1",
+          "start_s": 10312,
+          "end_s": 10325,
+          "quote_snippet": "wow two thousand lines... i'm not gonna read all that"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "html-prototype-in-grokbot",
+      "kind": "html_prototype",
+      "title": "Vanilla HTML/CSS/JS prototypes rendered inside Grok Bot",
+      "day": "day1",
+      "timestamp": {
+        "start_s": 8323,
+        "end_s": 8400
+      },
+      "speaker": "Matt Palmer / guests",
+      "repo": null,
+      "path": "index.html (spoken)",
+      "pr_number": null,
+      "url": null,
+      "language": "html",
+      "snippet": null,
+      "summary": "Early prototypes as HTML/CSS/JS (sometimes inline styles) rendered in Grok Bot without external deploy; later pushed to GitHub + Vercel. Scrappy index.html called out as more than they started with.",
+      "outcome": "prototype_only",
+      "related_bots": [
+        "grokpot-prototyper"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 8323,
+          "end_s": 8360,
+          "quote_snippet": "HTML, CSS, JS, Vanilla prototypes"
+        },
+        {
+          "day": "day1",
+          "start_s": 13374,
+          "end_s": 13410,
+          "quote_snippet": "It's an index.html... styles are all in line"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "vercel-connect-main-deploys",
+      "kind": "other",
+      "title": "Vercel connected to GitHub — deploys on push to main",
+      "day": "day1",
+      "timestamp": {
+        "start_s": 13386,
+        "end_s": 13580
+      },
+      "speaker": "Matt Palmer",
+      "repo": "shipbythursday/*",
+      "path": null,
+      "pr_number": null,
+      "url": "https://*.vercel.app (preview hostname garbled in ASR as PopupOrphanOmega.Versal.App)",
+      "language": null,
+      "snippet": null,
+      "summary": "Authorized Vercel ↔ GitHub; first deploys running on main. Pattern: push to main → live preview. Day2/3 continue with Vercel Functions for Go serverless backend.",
+      "outcome": "merged",
+      "related_bots": [
+        "steve-chief-of-staff",
+        "tater-engineer"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 13386,
+          "end_s": 13420,
+          "quote_snippet": "get Vercel connected up to the repo... Hit the deploy button"
+        },
+        {
+          "day": "day1",
+          "start_s": 13571,
+          "end_s": 13590,
+          "quote_snippet": "We have deploys running on main, so just push to main"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "slash-potato-mode",
+      "kind": "command",
+      "title": "slash potato mode (P-Stack router skill)",
+      "day": "day2",
+      "timestamp": {
+        "start_s": 5314,
+        "end_s": 5380
+      },
+      "speaker": "Lauren Tan",
+      "repo": null,
+      "path": null,
+      "pr_number": null,
+      "url": null,
+      "language": "bash",
+      "snippet": "/potato mode",
+      "summary": "In Grok Bot type /potato mode (or say 'use potato mode'). Router skill from P-Stack that selects playbooks (e.g. prototyping, architect, full autopilot). Also usable from Cursor Cloud Agents with P-Stack prompt.",
+      "outcome": "unknown",
+      "related_bots": [
+        "dr-eggbot",
+        "cupcake-eng",
+        "tater-engineer"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 5314,
+          "end_s": 5360,
+          "quote_snippet": "in Grokbot, you can type slash potato mode"
+        },
+        {
+          "day": "day2",
+          "start_s": 6819,
+          "end_s": 6880,
+          "quote_snippet": "potato mode is... kind of like a router skill"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "full-autopilot-invocation",
+      "kind": "command",
+      "title": "potato mode full autopilot this plan",
+      "day": "day3",
+      "timestamp": {
+        "start_s": 863,
+        "end_s": 920
+      },
+      "speaker": "Lauren Tan",
+      "repo": null,
+      "path": null,
+      "pr_number": null,
+      "url": null,
+      "language": null,
+      "snippet": null,
+      "summary": "slash potato mode + 'full autopilot this plan' decomposes plan into small phases, mini-factory of implement → verify/fuzz → auto-merge PRs. Overnight claimed >100 PRs; morning counts ~160–170 closed.",
+      "outcome": "mashed",
+      "related_bots": [
+        "play-qa",
+        "cupcake-eng",
+        "bake-engineer"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day3",
+          "start_s": 863,
+          "end_s": 920,
+          "quote_snippet": "slash potato mode and you say full autopilot this plan"
+        },
+        {
+          "day": "day3",
+          "start_s": 896,
+          "end_s": 930,
+          "quote_snippet": "overnight... more than 100 PRs... 160, 170"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "thursday-arena-launch-url",
+      "kind": "url",
+      "title": "ThursdayArena.com launch + @ThursdayArena on X",
+      "day": "day3",
+      "timestamp": {
+        "start_s": 6511,
+        "end_s": 6560
+      },
+      "speaker": "Matt Palmer / Lauren Tan / Roshan Sadanani",
+      "repo": "shipbythursday/* (game)",
+      "path": null,
+      "pr_number": null,
+      "url": "https://ThursdayArena.com",
+      "language": null,
+      "snippet": null,
+      "summary": "Public product name drop at launch. Official sources only: ThursdayArena.com and @ThursdayArena on X. Codename had been Cupcake.",
+      "outcome": "unknown",
+      "related_bots": [
+        "steve-chief-of-staff",
+        "play-qa"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day3",
+          "start_s": 6511,
+          "end_s": 6550,
+          "quote_snippet": "Thursday Arena is live... ThursdayArena.com is our only official game"
+        },
+        {
+          "day": "day3",
+          "start_s": 1188,
+          "end_s": 1210,
+          "quote_snippet": "code name calling it Cupcake, but real name drop coming soon"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "stack-go-vercel-planetscale-clerk",
+      "kind": "other",
+      "title": "Prod stack: Go + Vercel Functions + PlanetScale + Clerk (X login)",
+      "day": "day3",
+      "timestamp": {
+        "start_s": 7581,
+        "end_s": 7700
+      },
+      "speaker": "Roshan Sadanani / Matt Palmer",
+      "repo": "shipbythursday/*",
+      "path": null,
+      "pr_number": null,
+      "url": null,
+      "language": "go",
+      "snippet": null,
+      "summary": "Backend written in Go as serverless Vercel Functions; PlanetScale for game DB (load-tested); Clerk for auth including Sign in with X; Vercel hosting + analytics. Manual credit-card provisioning of ~10 services day1–2.",
+      "outcome": "unknown",
+      "related_bots": [
+        "bake-engineer",
+        "cupcake-eng"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day3",
+          "start_s": 7581,
+          "end_s": 7660,
+          "quote_snippet": "vercel as our hosting provider... clerk... planet scale as a database provider"
+        },
+        {
+          "day": "day3",
+          "start_s": 10501,
+          "end_s": 10550,
+          "quote_snippet": "back end is built with go... serverless... vercel functions... planet scale"
+        },
+        {
+          "day": "day3",
+          "start_s": 20109,
+          "end_s": 20140,
+          "quote_snippet": "sat down for like an hour and logged into like 10 different services, put in our credit card numbers"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "pay-for-cloud-auction-pr",
+      "kind": "pr",
+      "title": "Pay for Cloud — weekly ads auction for pinned leaderboard row",
+      "day": "day3",
+      "timestamp": {
+        "start_s": 26135,
+        "end_s": 26200
+      },
+      "speaker": "Lauren Tan / Matt Palmer",
+      "repo": "shipbythursday/*",
+      "path": null,
+      "pr_number": null,
+      "url": null,
+      "language": null,
+      "snippet": null,
+      "summary": "Monetization PR: weekly ads auction for a pinned paid row on the leaderboard. Merged live on stream; auction UI noted as broken shortly after; intended ad placement in ticker/leaderboard.",
+      "outcome": "mashed",
+      "related_bots": [
+        "bake-engineer",
+        "steve-chief-of-staff"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day3",
+          "start_s": 26135,
+          "end_s": 26170,
+          "quote_snippet": "pay for cloud PR is up... weekly ads auction for a pin paid row on... the leaderboard oh merged already"
+        },
+        {
+          "day": "day3",
+          "start_s": 27157,
+          "end_s": 27180,
+          "quote_snippet": "buy an ad... auction is currently broken"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "bad-sql-prod-outage",
+      "kind": "sql",
+      "title": "Bad SQL from software factory brings down prod",
+      "day": "day3",
+      "timestamp": {
+        "start_s": 28259,
+        "end_s": 28320
+      },
+      "speaker": "Matt Palmer / Lauren Tan",
+      "repo": "shipbythursday/*",
+      "path": null,
+      "pr_number": null,
+      "url": null,
+      "language": "sql",
+      "snippet": null,
+      "summary": "Near wrap: software factory issued a bad SQL query that brought down production while discussing signup metrics (~6k public matches, ~2k users target, ~30k page views). Classic factory risk called out live.",
+      "outcome": "broke_prod",
+      "related_bots": [
+        "steve-chief-of-staff",
+        "tater-engineer",
+        "play-qa"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day3",
+          "start_s": 28259,
+          "end_s": 28300,
+          "quote_snippet": "software factory that just totally brought down prod with a bad SQL query"
+        },
+        {
+          "day": "day3",
+          "start_s": 28237,
+          "end_s": 28280,
+          "quote_snippet": "crossed the over 6,000-game public match threshold... close to 30,000 page views"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "stripe-link-connector",
+      "kind": "other",
+      "title": "Stripe Link connector — agent one-time cards with spend approval",
+      "day": "day3",
+      "timestamp": {
+        "start_s": 19886,
+        "end_s": 19960
+      },
+      "speaker": "Dan Hill (Stripe)",
+      "repo": null,
+      "path": null,
+      "pr_number": null,
+      "url": null,
+      "language": null,
+      "snippet": null,
+      "summary": "Grok Bot marketplace connector: Link issues one-time-use cards so agents can buy assets on the internet after human approves spend in UI. Separate from broader Stripe payment APIs also available.",
+      "outcome": "unknown",
+      "related_bots": [],
+      "transcript_refs": [
+        {
+          "day": "day3",
+          "start_s": 19886,
+          "end_s": 19940,
+          "quote_snippet": "Link one basically lets your agent buy stuff on the internet... one-time use cards... approve the spend"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "pstack-marketplace",
+      "kind": "other",
+      "title": "P-Stack (Pstack) marketplace skill pack — 2500 PRs/month claim",
+      "day": "day1",
+      "timestamp": {
+        "start_s": 1129,
+        "end_s": 1180
+      },
+      "speaker": "Lauren Tan",
+      "repo": null,
+      "path": null,
+      "pr_number": null,
+      "url": null,
+      "language": null,
+      "snippet": null,
+      "summary": "Lauren's engineering skill pack on Grok Bot marketplace (search P-Stack). Claimed 2500 PRs shipped into production previous month (~83/day). Powers potato mode, Comment Sicko, etc.",
+      "outcome": "unknown",
+      "related_bots": [
+        "dr-eggbot",
+        "comment-sicko"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 1129,
+          "end_s": 1180,
+          "quote_snippet": "shipped 2,500 PRs of P-Stack into production... marketplace and search for P-Stack"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "x-mcp-connector",
+      "kind": "other",
+      "title": "X MCP connected on blank Grok Bot account",
+      "day": "day1",
+      "timestamp": {
+        "start_s": 5713,
+        "end_s": 5740
+      },
+      "speaker": "Lauren Tan",
+      "repo": null,
+      "path": null,
+      "pr_number": null,
+      "url": null,
+      "language": null,
+      "snippet": null,
+      "summary": "Fresh Grok Bot account: only connector initially was X MCP from marketplace, used to mine public posts for business ideas before Slack/Notion/GitHub wiring.",
+      "outcome": "unknown",
+      "related_bots": [
+        "steve-chief-of-staff"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 5713,
+          "end_s": 5740,
+          "quote_snippet": "gone into the marketplace and I've connected the X MCP"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "notion-canonical-schema-docs",
+      "kind": "other",
+      "title": "Notion as source of truth — schema, mechanics, launch checklist",
+      "day": "day3",
+      "timestamp": {
+        "start_s": 7957,
+        "end_s": 8100
+      },
+      "speaker": "Matt Palmer / Roshan Sadanani",
+      "repo": null,
+      "path": null,
+      "pr_number": null,
+      "url": null,
+      "language": null,
+      "snippet": null,
+      "summary": "Company Notion holds canonical DB schema, game mechanics source of truth, launch checklist, task board bots update. Day2 instruction: every bot must keep Notion updated.",
+      "outcome": "unknown",
+      "related_bots": [
+        "knowledge-base-manager",
+        "steve-chief-of-staff"
+      ],
+      "transcript_refs": [
+        {
+          "day": "day3",
+          "start_s": 8028,
+          "end_s": 8080,
+          "quote_snippet": "canonical database schema... source of truth for our game mechanics"
+        },
+        {
+          "day": "day2",
+          "start_s": 26169,
+          "end_s": 26200,
+          "quote_snippet": "notion is going to be the source of truth and every bot should keep it updated"
+        }
+      ],
+      "confidence": "high"
+    }
+  ]
+}

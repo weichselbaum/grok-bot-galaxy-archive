@@ -1,0 +1,946 @@
+{
+  "$schema_doc": "Playbooks mined from Galaxy transcripts.",
+  "version": 1,
+  "updated_at": "2026-09-19T20:06:00+02:00",
+  "source_priority": [
+    "transcripts/day{N}/transcript.json",
+    "official docs (x.ai/bot/guides) for naming alignment only"
+  ],
+  "field_docs": {
+    "id": "slug",
+    "name": "title",
+    "category": "orchestration|engineering|...",
+    "summary": "what",
+    "confidence": "high|medium|low"
+  },
+  "approaches": [
+    {
+      "id": "slack-as-control-plane",
+      "name": "Slack as control plane",
+      "aliases": [
+        "Slack factory",
+        "issues channel"
+      ],
+      "category": "orchestration",
+      "summary": "Use Slack (issues channel + bot channels) as the company's control plane before adding Linear/etc. Humans and bots collaborate in threads; bots can be @-mentioned to ship features.",
+      "steps": [
+        "Create team Slack + issues channel",
+        "Wire bots to listen (e.g. Ping routines)",
+        "Treat Slack as triage + assignment surface",
+        "Optionally sync status to Notion"
+      ],
+      "when_to_use": "Day-0 company setup; mixed human+bot orgs",
+      "anti_patterns": [
+        "Jumping to heavy PM tools before Slack is working"
+      ],
+      "related_bots": [
+        "ping-slack-monitor",
+        "steve-chief-of-staff"
+      ],
+      "related_sessions": [
+        "Build spine day1"
+      ],
+      "day_examples": [
+        {
+          "day": "day1",
+          "start_s": 1097,
+          "end_s": 1130,
+          "quote_snippet": "maybe Slack is a control plane"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 1055,
+          "end_s": 1130,
+          "quote_snippet": "Slack channel for our team... Slack is a control plane"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high"
+    },
+    {
+      "id": "ship-to-main-no-prs",
+      "name": "Ship to main (no PRs) early-stage policy",
+      "aliases": [
+        "no pull requests",
+        "push to main"
+      ],
+      "category": "engineering",
+      "summary": "After Steve opened a huge PR, Lauren set rule: no pull requests — ship to main until someone objects. Optimized for 72-hour velocity; later evolves into small-PR autopilot + Play QA + mash.",
+      "steps": [
+        "Ban large speculative PRs",
+        "Push/deploy from main",
+        "Add reviewer bots when needed"
+      ],
+      "when_to_use": "Greenfield 72h builds; throwaway prototypes",
+      "anti_patterns": [
+        "2000-line unread PRs",
+        "Bikeshedding process before product"
+      ],
+      "related_bots": [
+        "steve-chief-of-staff",
+        "hashbrown-pr-reviewer"
+      ],
+      "related_sessions": [
+        "Build spine day1"
+      ],
+      "day_examples": [
+        {
+          "day": "day1",
+          "start_s": 10273,
+          "end_s": 10320,
+          "quote_snippet": "new rule no pull requests we ship to maine"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 10273,
+          "end_s": 10320,
+          "quote_snippet": "no pull requests we ship to maine for now"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high"
+    },
+    {
+      "id": "potato-mode-router",
+      "name": "Potato mode",
+      "aliases": [
+        "/potato mode",
+        "P-Stack potato mode",
+        "potato mode prototyping"
+      ],
+      "category": "engineering",
+      "summary": "P-Stack router skill: invoke via /potato mode or natural language. Routes into playbooks (prototyping with debug sliders, architect multi-model review, full autopilot). Described as adding flavor/constraints awareness via multi-model swarm.",
+      "steps": [
+        "Install P-Stack / ensure potato skills present",
+        "Invoke /potato mode or 'use potato mode'",
+        "Optionally specify playbook: prototyping | architect | full autopilot",
+        "Let router spawn cloud agents as needed"
+      ],
+      "when_to_use": "Fast prototypes; structured eng loops; overnight factories",
+      "anti_patterns": [
+        "Skipping architect when constraints matter — or over-architecting early (Lauren skipped architect for speed)"
+      ],
+      "related_bots": [
+        "dr-eggbot",
+        "cupcake-eng",
+        "tater-engineer"
+      ],
+      "related_sessions": [
+        "Build spine day2",
+        "Engineering"
+      ],
+      "day_examples": [
+        {
+          "day": "day2",
+          "start_s": 5314,
+          "end_s": 5360,
+          "quote_snippet": "type slash potato mode"
+        },
+        {
+          "day": "day2",
+          "start_s": 6819,
+          "end_s": 6880,
+          "quote_snippet": "potato mode is... a router skill"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 5314,
+          "end_s": 5380,
+          "quote_snippet": "slash potato mode"
+        },
+        {
+          "day": "day2",
+          "start_s": 7092,
+          "end_s": 7120,
+          "quote_snippet": "you're watching Lauren demonstrate how to use potato mode"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/0xcodila-30-prompts.md"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "full-autopilot-small-prs",
+      "name": "Full autopilot",
+      "aliases": [
+        "full autopilot this plan",
+        "YOLO mode (joked, not endorsed)"
+      ],
+      "category": "engineering",
+      "summary": "Potato-mode playbook that breaks a plan into small phases, implements small PRs, verifies (run app, fuzz/click), then auto-merges when checks pass. Used overnight day2→day3 for 100–170+ PRs.",
+      "steps": [
+        "Have a plan document",
+        "slash potato mode → full autopilot this plan",
+        "Agents implement small PRs",
+        "Verifier agents run/fuzz app",
+        "Auto-merge when green + trusted"
+      ],
+      "when_to_use": "When you want high PR throughput with verification loops",
+      "anti_patterns": [
+        "Calling it pure YOLO without verification",
+        "Using full autopilot on unvalidated triage (day3: Crumble→Tater without full autopilot)"
+      ],
+      "related_bots": [
+        "play-qa",
+        "bake-engineer",
+        "cupcake-eng"
+      ],
+      "related_sessions": [
+        "Build spine day2–3"
+      ],
+      "day_examples": [
+        {
+          "day": "day3",
+          "start_s": 863,
+          "end_s": 920,
+          "quote_snippet": "full autopilot this plan... small PRs... verify... auto merge"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 26540,
+          "end_s": 26620,
+          "quote_snippet": "favorite playbook called Full autopilot"
+        },
+        {
+          "day": "day3",
+          "start_s": 863,
+          "end_s": 930,
+          "quote_snippet": "full autopilot this plan... overnight... more than 100 PRs"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/community-recaps.md"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "swarm-multi-model",
+      "name": "Swarm",
+      "aliases": [
+        "swarm of agents",
+        "multi-model swarm"
+      ],
+      "category": "engineering",
+      "summary": "Spin many Cursor Cloud Agents / potato-mode agents (often different models) in parallel to generate and compare prototypes or critique architecture. Used day2 morning to explore game prototypes.",
+      "steps": [
+        "Pick divergent models/tastes",
+        "Swarm on same brief",
+        "Compare options live",
+        "Pick winner to harden"
+      ],
+      "when_to_use": "Early ideation; architect critique; frontend prototyping forks",
+      "anti_patterns": [],
+      "related_bots": [
+        "cupcake-eng",
+        "dr-eggbot"
+      ],
+      "related_sessions": [
+        "Build spine day2"
+      ],
+      "day_examples": [
+        {
+          "day": "day2",
+          "start_s": 21045,
+          "end_s": 21090,
+          "quote_snippet": "spun up a swarm of agents using p-stack using different models"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 6959,
+          "end_s": 6990,
+          "quote_snippet": "having different models kind of swarm on them"
+        },
+        {
+          "day": "day2",
+          "start_s": 21045,
+          "end_s": 21090,
+          "quote_snippet": "swarm of agents using p-stack"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/community-recaps.md"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "mash-merge-language",
+      "name": "Mash",
+      "aliases": [
+        "mash main",
+        "mashing PRs",
+        "squash potatoes"
+      ],
+      "category": "other",
+      "summary": "Studio in-joke language: merges called 'mash' after Dr. Eggbot potato-themed naming leaked into a Notion task. Chief of staff only believes in mashing PRs; stream shows pushes vs mashes.",
+      "steps": [
+        "(Emergent) tell meta-bot to use potato-themed names",
+        "Notion task redefines merge vocabulary",
+        "Team adopts mash/push distinction"
+      ],
+      "when_to_use": "Culture/fun; illustrates bots inventing shared language",
+      "anti_patterns": [],
+      "related_bots": [
+        "dr-eggbot",
+        "steve-chief-of-staff",
+        "play-qa"
+      ],
+      "related_sessions": [
+        "Day3 wrap"
+      ],
+      "day_examples": [
+        {
+          "day": "day3",
+          "start_s": 28454,
+          "end_s": 28520,
+          "quote_snippet": "every merge of a pull request should be called a mash"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day3",
+          "start_s": 28416,
+          "end_s": 28540,
+          "quote_snippet": "landing to mash main... every merge... called a mash... pushes and there are mashes"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/community-recaps.md"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "teach-a-task",
+      "name": "Teach a task",
+      "aliases": [
+        "teacher task",
+        "screen recording → skill"
+      ],
+      "category": "memory",
+      "summary": "Human drives the bot's computer to demonstrate a UI workflow (e.g. add animation). Recording becomes a reusable skill the bot can replay later without re-teaching.",
+      "steps": [
+        "Open bot computer",
+        "Hit teach a task",
+        "Perform the UI steps",
+        "Stop → skill created",
+        "Invoke skill by chat later"
+      ],
+      "when_to_use": "Repetitive GUI workflows (Slides, Forms, design tools)",
+      "anti_patterns": [],
+      "related_bots": [
+        "slide-sonia"
+      ],
+      "related_sessions": [
+        "Grok Bot 101"
+      ],
+      "day_examples": [
+        {
+          "day": "day1",
+          "start_s": 2665,
+          "end_s": 2750,
+          "quote_snippet": "teach a task... turn that recording and that animation into a skill"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 2665,
+          "end_s": 2750,
+          "quote_snippet": "teach a task... Slide Sonia"
+        },
+        {
+          "day": "day1",
+          "start_s": 4925,
+          "end_s": 4980,
+          "quote_snippet": "when you teach a task... taking screenshots... watch that video"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high"
+    },
+    {
+      "id": "auto-review-approvals",
+      "name": "Auto-review",
+      "aliases": [
+        "auto reviewer",
+        "approval rules"
+      ],
+      "category": "security_approvals",
+      "summary": "Baseline classifier decides risky vs safe actions; users add personal rules (e.g. never send email without asking). Credentials via modal on human machine, not bot VM. Memory of permissions builds trust over time.",
+      "steps": [
+        "Baseline auto-review on",
+        "Add explicit allow/deny rules",
+        "Approve edge cases → memory",
+        "Tighten for PHI/PII"
+      ],
+      "when_to_use": "Any connector with side effects (email, Slack external, payments)",
+      "anti_patterns": [
+        "Blind trust on first outbound"
+      ],
+      "related_bots": [
+        "email-ethan",
+        "data-dan"
+      ],
+      "related_sessions": [
+        "Grok Bot 101"
+      ],
+      "day_examples": [
+        {
+          "day": "day1",
+          "start_s": 3573,
+          "end_s": 3620,
+          "quote_snippet": "blocked by my own personal auto-review rule"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 4560,
+          "end_s": 4650,
+          "quote_snippet": "auto review tool, which basically has a classifier under the hood"
+        },
+        {
+          "day": "day1",
+          "start_s": 3573,
+          "end_s": 3620,
+          "quote_snippet": "agent is trying to reply to an email, and this is blocked"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high"
+    },
+    {
+      "id": "memory-on-s3",
+      "name": "Long-lived memory (S3)",
+      "aliases": [
+        "steer into memory",
+        "forget/update memory"
+      ],
+      "category": "memory",
+      "summary": "Bot memory persists in S3 buckets — long-lived across tasks. Steering ('never use my full name') is stored forever. Duplicate bots get fresh context. Humans must update memory when delegated bots are deleted.",
+      "steps": [
+        "Steer via chat corrections",
+        "Optionally curate/forget",
+        "Duplicate for clean slate",
+        "Update CoS when team membership changes"
+      ],
+      "when_to_use": "Persona bots used across many projects",
+      "anti_patterns": [
+        "Assuming deleted sub-bots are known to CoS without update"
+      ],
+      "related_bots": [
+        "steve-chief-of-staff"
+      ],
+      "related_sessions": [
+        "Grok Bot 101"
+      ],
+      "day_examples": [
+        {
+          "day": "day1",
+          "start_s": 5105,
+          "end_s": 5180,
+          "quote_snippet": "memory is stored in s3 buckets inside of grok bot"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 3958,
+          "end_s": 4020,
+          "quote_snippet": "stored in its memory in s3"
+        },
+        {
+          "day": "day1",
+          "start_s": 5105,
+          "end_s": 5200,
+          "quote_snippet": "memory is stored in s3 buckets... long-lived... persistent"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/community-recaps.md"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "chief-of-staff-delegation",
+      "name": "Chief of staff orchestration",
+      "aliases": [
+        "orchestrator agent",
+        "talk only to CoS"
+      ],
+      "category": "orchestration",
+      "summary": "Put delegation in the CoS description so it never does specialist work itself — always routes to subordinates with right context. Human mostly talks to Steve; Eggbot/meta-bot maintains the org chart.",
+      "steps": [
+        "Create/rename default bot as CoS",
+        "Write description: always delegate",
+        "Spawn specialists (eng, QA, design)",
+        "Human ↔ CoS only; CoS ↔ team"
+      ],
+      "when_to_use": "Multi-bot companies; reducing human micromanagement",
+      "anti_patterns": [
+        "Micromanaging every specialist with individual prompts — time to have Eggbot rewrite team norms"
+      ],
+      "related_bots": [
+        "steve-chief-of-staff",
+        "dr-eggbot",
+        "cora-pm-chief",
+        "master-chief-guest-cos"
+      ],
+      "related_sessions": [
+        "Build spine",
+        "Grok Bot 101",
+        "Founders"
+      ],
+      "day_examples": [
+        {
+          "day": "day1",
+          "start_s": 3241,
+          "end_s": 3290,
+          "quote_snippet": "chief of staff actually doesn't do anything on its own. It delegates"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 3241,
+          "end_s": 3290,
+          "quote_snippet": "chief of staff... delegates to its subordinate agents"
+        },
+        {
+          "day": "day1",
+          "start_s": 7571,
+          "end_s": 7620,
+          "quote_snippet": "turn Steve into my chief of staff"
+        },
+        {
+          "day": "day2",
+          "start_s": 26094,
+          "end_s": 26140,
+          "quote_snippet": "when you're... micromanaging your bots too much... Dr eggbot"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/0xcodila-30-prompts.md"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "meta-bot-creates-specialists",
+      "name": "Meta-bot creates specialists",
+      "aliases": [
+        "Dr. Eggbot pattern",
+        "bot that makes bots"
+      ],
+      "category": "orchestration",
+      "summary": "Install a marketplace meta-bot (Dr. Eggbot) that interviews/creates specialists with memory, skills, and initial tasks — including converting general bots into roles (CoS, eng) and rewriting descriptions for potato principles.",
+      "steps": [
+        "Install meta-bot from marketplace",
+        "Ask it to create N specialists",
+        "Optionally rewrite existing bots",
+        "Propagate team-wide policies"
+      ],
+      "when_to_use": "Standing up a company org chart in minutes",
+      "anti_patterns": [],
+      "related_bots": [
+        "dr-eggbot",
+        "cupcake-eng",
+        "steve-chief-of-staff"
+      ],
+      "related_sessions": [
+        "Build spine"
+      ],
+      "day_examples": [
+        {
+          "day": "day1",
+          "start_s": 7156,
+          "end_s": 7220,
+          "quote_snippet": "Dr. Eggbot... taught Eggbot how to create high quality bots"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 7156,
+          "end_s": 7220,
+          "quote_snippet": "Dr. Eggbot... create high quality bots"
+        },
+        {
+          "day": "day3",
+          "start_s": 8755,
+          "end_s": 8780,
+          "quote_snippet": "Dr. Eggbot... responsible for creating bots for me"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/0xcodila-30-prompts.md"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "software-factory-feedback-loop",
+      "name": "Software factory (feedback → triage → fix → playtest → mash)",
+      "aliases": [
+        "factory workflow",
+        "overnight software factory"
+      ],
+      "category": "verification",
+      "summary": "Closed loop: Slack user feedback → CoS triage workflow → Crumble confirms bugs → Tater fixes (potato mode) → Hashbrown validates → Play playtests green PRs → auto-approve → mash main. Also reacts to prod bugs via cloud agents.",
+      "steps": [
+        "Pipe feedback to Slack",
+        "CoS factory: triage / reproduce / ticket",
+        "Crumble triage agent confirms",
+        "Tater implements fix",
+        "Hashbrown validates",
+        "Play playtests on Vercel preview when CI green",
+        "Auto-approve and mash"
+      ],
+      "when_to_use": "Post-launch iteration under load",
+      "anti_patterns": [
+        "Unconstrained factory SQL against prod (caused outage)"
+      ],
+      "related_bots": [
+        "steve-chief-of-staff",
+        "crumble-triage",
+        "tater-engineer",
+        "hashbrown-pr-reviewer",
+        "play-qa"
+      ],
+      "related_sessions": [
+        "Build spine day3"
+      ],
+      "day_examples": [
+        {
+          "day": "day3",
+          "start_s": 7885,
+          "end_s": 7950,
+          "quote_snippet": "slack channel that is receiving user feedback... factory workflow"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day3",
+          "start_s": 7489,
+          "end_s": 7580,
+          "quote_snippet": "automatic bug fixes automatic play tests automatic reviews"
+        },
+        {
+          "day": "day3",
+          "start_s": 28416,
+          "end_s": 28450,
+          "quote_snippet": "play testing, fixing PRs, auto approving PRs... mash main"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high"
+    },
+    {
+      "id": "notion-source-of-truth",
+      "name": "Notion as source of truth",
+      "aliases": [
+        "knowledge base manager pattern"
+      ],
+      "category": "orchestration",
+      "summary": "Put canonical schema, game mechanics, tasks, and launch checklists in Notion; instruct every bot to keep it updated. Knowledge Base Manager watches conversations and updates Notion when pinged.",
+      "steps": [
+        "Create Notion team space",
+        "Document canonical artifacts",
+        "Tell all bots Notion is SoT",
+        "Optional KB manager bot"
+      ],
+      "when_to_use": "Multi-human multi-bot teams",
+      "anti_patterns": [
+        "Bots inventing conflicting plans in chat only"
+      ],
+      "related_bots": [
+        "knowledge-base-manager"
+      ],
+      "related_sessions": [
+        "Build spine"
+      ],
+      "day_examples": [
+        {
+          "day": "day2",
+          "start_s": 26169,
+          "end_s": 26200,
+          "quote_snippet": "notion is going to be the source of truth"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 19066,
+          "end_s": 19120,
+          "quote_snippet": "knowledge base manager... keep notion up to date"
+        },
+        {
+          "day": "day2",
+          "start_s": 26169,
+          "end_s": 26200,
+          "quote_snippet": "every bot should keep it updated"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high"
+    },
+    {
+      "id": "sell-before-build",
+      "name": "Sell to three people before building",
+      "aliases": [
+        "validation first",
+        "butts in seats"
+      ],
+      "category": "gtm",
+      "summary": "Guest/advisor guidance day1: before deciding the business, see if you can sell it to three people — especially for non-VC pop-up ideas. Obsess on distribution over stealth building.",
+      "steps": [
+        "Talk to 3 buyers",
+        "Collect willingness to pay",
+        "Then build MVP"
+      ],
+      "when_to_use": "Ideation / pivot decisions",
+      "anti_patterns": [
+        "Building pop-up OS for months without customers"
+      ],
+      "related_bots": [],
+      "related_sessions": [
+        "Build spine day1 guest"
+      ],
+      "day_examples": [
+        {
+          "day": "day1",
+          "start_s": 10728,
+          "end_s": 10760,
+          "quote_snippet": "before you even decide what business you want to build you should see if you can sell it to three people"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 10728,
+          "end_s": 10760,
+          "quote_snippet": "sell it to three people"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/0xcodila-30-prompts.md"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "pivot-when-agents-tell-you",
+      "name": "Pivot with conviction (agents as research)",
+      "aliases": [
+        "agents told us to pivot",
+        "pop-up → game studio"
+      ],
+      "category": "product",
+      "summary": "Day2 open: builders announce pivot from restaurant pop-up OS to game studio because agents/research pointed elsewhere and personal passion fit. Document pivot + GTM in Notion; keep shipping cadence.",
+      "steps": [
+        "Mine research",
+        "Choose passion + realism",
+        "Document pivot",
+        "Rename codename (Cupcake) → public (Thursday Arena)"
+      ],
+      "when_to_use": "Early discovery within a time box",
+      "anti_patterns": [
+        "Sunk-cost on day1 idea"
+      ],
+      "related_bots": [
+        "steve-chief-of-staff"
+      ],
+      "related_sessions": [
+        "Build spine day2"
+      ],
+      "day_examples": [
+        {
+          "day": "day2",
+          "start_s": 693,
+          "end_s": 720,
+          "quote_snippet": "The agents told us to pivot"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day2",
+          "start_s": 693,
+          "end_s": 750,
+          "quote_snippet": "agents told us to pivot"
+        },
+        {
+          "day": "day2",
+          "start_s": 1187,
+          "end_s": 1220,
+          "quote_snippet": "pivoting to doing a game studio"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/community-recaps.md"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "thinnest-stack-payments-day3",
+      "name": "Thinnest stack that can take payment",
+      "aliases": [
+        "manual infra then automate",
+        "Pay for Cloud"
+      ],
+      "category": "product",
+      "summary": "Separate must-build from can-fake. Manually provision ~10 services with credit cards first; use Clerk/PlanetScale/Vercel/Stripe Link. Day3 monetization experiment: Pay for Cloud leaderboard auction rather than full billing system.",
+      "steps": [
+        "List must-have infra",
+        "Sign up manually",
+        "Ship guest mode + X login",
+        "Add thinnest paid surface (auction/ad)"
+      ],
+      "when_to_use": "72-hour launches",
+      "anti_patterns": [
+        "Building custom auth/billing day1"
+      ],
+      "related_bots": [],
+      "related_sessions": [
+        "Build spine day3",
+        "Stripe guest"
+      ],
+      "day_examples": [
+        {
+          "day": "day3",
+          "start_s": 20109,
+          "end_s": 20150,
+          "quote_snippet": "logged into like 10 different services, put in our credit card numbers"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day3",
+          "start_s": 20109,
+          "end_s": 20150,
+          "quote_snippet": "logged into like 10 different services"
+        },
+        {
+          "day": "day3",
+          "start_s": 26135,
+          "end_s": 26170,
+          "quote_snippet": "pay for cloud PR... weekly ads auction"
+        }
+      ],
+      "secondary_refs": [
+        "secondary/0xcodila-30-prompts.md"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "implementer-vs-reviewer-split",
+      "name": "Implementer vs reviewer bots",
+      "aliases": [
+        "Tater / Hashbrown",
+        "Emily manages eng bots"
+      ],
+      "category": "verification",
+      "summary": "Separate bots that write code from bots that review/validate (Tater vs Hashbrown; Emily EM who doesn't code). Reduces self-approval bias; Play adds runtime QA beyond static review.",
+      "steps": [
+        "Designate implementer",
+        "Designate reviewer",
+        "Optional runtime playtester"
+      ],
+      "when_to_use": "Any autopilot factory",
+      "anti_patterns": [
+        "Same bot merges its own unverified work"
+      ],
+      "related_bots": [
+        "tater-engineer",
+        "hashbrown-pr-reviewer",
+        "emily-eng-manager",
+        "play-qa"
+      ],
+      "related_sessions": [
+        "Build spine",
+        "PM session"
+      ],
+      "day_examples": [
+        {
+          "day": "day1",
+          "start_s": 13835,
+          "end_s": 13860,
+          "quote_snippet": "Hashbrown's job is to review the PRs that Tater opens"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 13835,
+          "end_s": 13860,
+          "quote_snippet": "Hashbrown... review the PRs that Tater opens"
+        },
+        {
+          "day": "day1",
+          "start_s": 21854,
+          "end_s": 21900,
+          "quote_snippet": "Emily has been coached not to actually do the coding"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high"
+    },
+    {
+      "id": "marketplace-hire-then-fire",
+      "name": "Marketplace hire / fire quickly",
+      "aliases": [
+        "featured bots",
+        "template contest"
+      ],
+      "category": "gtm",
+      "summary": "Pull specialist templates from public marketplace (prospecting, P-Stack, Eggbot, Lenny/Claire/etc.), assign first tasks, remove friction bots. Starbase Starship-launch contest for sharing can't-live-without bots.",
+      "steps": [
+        "Browse marketplace",
+        "Install 3–5",
+        "Give first task",
+        "Remove if friction"
+      ],
+      "when_to_use": "Day0 staffing",
+      "anti_patterns": [
+        "Keeping bots that create coordination overhead"
+      ],
+      "related_bots": [
+        "dr-eggbot"
+      ],
+      "related_sessions": [
+        "Grok Bot 101",
+        "Day3 marketing ops"
+      ],
+      "day_examples": [
+        {
+          "day": "day1",
+          "start_s": 5578,
+          "end_s": 5650,
+          "quote_snippet": "public marketplace... Claire's Lauren's Eric's Lenny's"
+        }
+      ],
+      "transcript_refs": [
+        {
+          "day": "day1",
+          "start_s": 5578,
+          "end_s": 5680,
+          "quote_snippet": "public marketplace"
+        },
+        {
+          "day": "day3",
+          "start_s": 4168,
+          "end_s": 4220,
+          "quote_snippet": "challenge... share a grokbot that you simply cannot live without... Starbase"
+        }
+      ],
+      "secondary_refs": [],
+      "confidence": "high"
+    }
+  ]
+}
