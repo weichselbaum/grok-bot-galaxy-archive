@@ -4,7 +4,7 @@ Clean dump of the **SpaceXAI Grok Bot Galaxy** livestreams (15–17 Sep 2026): f
 
 For people who missed the event and want to throw this at their Grok Bot to see what applies to **their** fleet.
 
-**Not included:** multi‑GB VODs (replays stay on X).
+**Not included:** multi‑GB VODs. Official recordings: [x.ai/galaxy](https://x.ai/galaxy).
 
 ## Apply prompt (paste this)
 
@@ -38,10 +38,12 @@ Short version: point your bot at the repo and paste the block above.
 | [`transcripts/`](transcripts/) | Day 1–3 `summary.md` + `transcript.json` |
 | [`LICENSE`](LICENSE) / [`NOTICE.md`](NOTICE.md) | MIT on this compilation; stream rights stay with owners |
 
-## Streams
+## Streams / recordings
 
-| Day | Replay |
-|-----|--------|
+Official hub (replays): **[https://x.ai/galaxy](https://x.ai/galaxy)**
+
+| Day | X broadcast |
+|-----|-------------|
 | 1 | https://x.com/i/broadcasts/1AxRnZbVpjaxl |
 | 2 | https://x.com/i/broadcasts/1PKqrNyvmYwGb |
 | 3 | https://x.com/i/broadcasts/1YGNrbXEeazGw |

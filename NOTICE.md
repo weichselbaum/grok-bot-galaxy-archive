@@ -16,7 +16,7 @@ transcripts and structured extracts.
 - **Raw X broadcast audio/video** remains copyright of the original rights
   holders (SpaceXAI / speakers / platform as applicable).
 - **Redistributing VODs is not the purpose of this repo.** Full media files are
-  intentionally **not** committed to git. Watch the official X broadcast replays
+  intentionally **not** committed to git. Watch the official recordings at https://x.ai/galaxy (and the X broadcast replays)
   linked in `README.md` / `SOURCES.md`.
 - Platform Terms of Service may further limit downloading or re-hosting media.
 - Third-party commentary and prompt compilations (e.g. community tweets, blogs)
